@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جاهزة؟ 💖</title>
+    <style>
+        :root { --pink: #ff6584; --bg: #fff0f3; }
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background-color: var(--bg); font-family: 'Segoe UI', sans-serif; min-height: 100vh; display: flex; justify-content: center; align-items: center; overflow: hidden; }
+        .heart-bg { position: fixed; font-size: 20px; animation: fall linear forwards; z-index: 1; pointer-events: none; }
+        @keyframes fall { 0% { transform: translateY(-20px) rotate(0deg); opacity: 1; } 100% { transform: translateY(100vh) rotate(360deg); opacity: 0; } }
+        .lock-card { background: white; padding: 40px 30px; border-radius: 30px; box-shadow: 0 10px 30px rgba(255, 101, 132, 0.2); text-align: center; max-width: 360px; width: 90%; border: 2px solid #ffccd5; z-index: 10; }
+        .avatar { width: 80px; height: 80px; border-radius: 50%; background: #ffccd5; margin: 0 auto 15px; display: flex; justify-content: center; align-items: center; font-size: 40px; }
+        h2 { color: var(--pink); margin-bottom: 10px; }
+        p { color: #666; font-size: 14px; margin-bottom: 25px; }
+        input { width: 100%; padding: 14px; border: 2px solid #ffccd5; border-radius: 25px; text-align: center; font-size: 16px; margin-bottom: 20px; outline: none; }
+        button { background: linear-gradient(135deg, var(--pink), #ff85a2); color: white; border: none; padding: 14px; border-radius: 25px; cursor: pointer; font-size: 16px; font-weight: bold; width: 100%; box-shadow: 0 5px 15px rgba(255, 101, 132, 0.4); }
+    </style>
+</head>
+<body>
+    <div class="lock-card">
+        <div class="avatar">😉</div>
+        <h2>جاهزة؟</h2>
+        <p>كل اللي بيننا هنا.. دخلّي الباسورد</p>
+        <input type="password" id="pass" placeholder="Password">
+        <button onclick="login()">Unlock 🔓</button>
+    </div>
+    <script>
+        function login() {
+            // ركز هنا: الباسورد متعدل وجاهز على 2022 زي ما طلبت
+            if(document.getElementById('pass').value.toLowerCase() === '100100') {
+                window.location.href = 'page2.htm';
+            } else { alert('الباسورد غلط يا قمر! 😉'); }
+        }
+        setInterval(() => {
+            const h = document.createElement('div'); h.classList.add('heart-bg'); h.innerText = '❤️';
+            h.style.left = Math.random() * 100 + 'vw'; h.style.animationDuration = Math.random() * 3 + 2 + 's';
+            document.body.appendChild(h); setTimeout(() => h.remove(), 4000);
+        }, 300);
+    </script>
+</body>
+</html>
